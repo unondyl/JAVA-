@@ -4,6 +4,8 @@ public class CongNhan extends CanBo {
         super(name,birthday,sex,address);
         this.level=level;
     }
+
+    @Override
     public void OutPrint(){
         super.OutPrint();
         System.out.println("Trình độ: "+level);

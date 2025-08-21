@@ -14,6 +14,6 @@ public class Bao extends Manager {
     @Override
     public void output() {
         super.output();
-        System.out.println("Ngay PH: " + dayPH+"\n");
+        System.out.print("Ngay PH: " + dayPH+"\n");
     }
 }

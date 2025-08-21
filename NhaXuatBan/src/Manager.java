@@ -15,4 +15,7 @@ public class Manager {
         System.out.println("Mã tài Liệu: "+ maTL);
         System.out.println("Nhà xuất bản: "+NhaXB);
     }
+    public String getMaTL(){
+        return maTL;
+    }
 }

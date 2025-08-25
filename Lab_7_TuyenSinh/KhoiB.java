@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class KhoiB extends qlyTuyenSinh{
     public KhoiB(){
     }
-    double toan, Sinh, hoa;
+    private double toan, Sinh, hoa;
     @Override
     public void input_Student() {
         super.input_Student();
@@ -14,7 +14,8 @@ public class KhoiB extends qlyTuyenSinh{
         System.out.print("Diem hoa: ");hoa=sc.nextDouble();
         System.out.print("Diem Sinh: ");Sinh =sc.nextDouble();
     }
-    public void output_Address(){
+
+    public void output_Student(){
         super.output_Student();
         System.out.println("Diem Toan: "+toan);
         System.out.println("Diem hoa: "+hoa);

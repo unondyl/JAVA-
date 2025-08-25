@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class qlyTuyenSinh {
     private String id,name,address, UT;
     public qlyTuyenSinh() {}
-    private Scanner sc = new Scanner(System.in);
     public void input_Student()
     {
+        Scanner sc = new Scanner(System.in);
         System.out.println("==THONG TIN CO BAN==");
         System.out.print("Nhap SBD "); id=sc.nextLine();
         System.out.print("Nhap Ho va ten: "); name=sc.nextLine();
@@ -19,7 +19,11 @@ public class qlyTuyenSinh {
     {
         System.out.println("SBD: "+id);
         System.out.println("Ho va ten: "+name);
-        System.out.println("Dia chi: "+address);
-        System.out.println("Uu tien: "+UT);
+        //System.out.println("Dia chi: "+address);
+        //System.out.println("Uu tien: "+UT);
+    }
+
+    public String getId() {
+        return id;
     }
 }

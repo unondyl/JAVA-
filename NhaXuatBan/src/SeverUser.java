@@ -6,14 +6,16 @@ public class SeverUser {
         ArrayList<TapChi> tapchi = new ArrayList<TapChi>();
         ArrayList<Sach> sach = new ArrayList<Sach>();
         ArrayList<Bao> bao = new ArrayList<Bao>();
-        System.out.println("=======CHON CHUC NANG=======");
-        System.out.println("1.Nhap danh sach");
-        System.out.println("2.Tim Kiem");
-        System.out.println("3.Xuat danh sach");
-        System.out.println("4.Thoat");
         Scanner sc = new Scanner(System.in);
-        int temp = sc.nextInt();
+        int temp = 0;
+        opp:
         while (temp != 4) {
+            System.out.println("=======CHON CHUC NANG=======");
+            System.out.println("1.Nhap danh sach");
+            System.out.println("2.Tim Kiem");
+            System.out.println("3.Xuat danh sach");
+            System.out.println("4.Thoat");
+            temp=sc.nextInt();
             if (temp == 1) {
                 System.out.print("Nhap so luong sach: ");int tmp_Sach = sc.nextInt();
                 for (int i = 0; i < tmp_Sach; i++) {
@@ -47,36 +49,31 @@ public class SeverUser {
                     tmp.output();
                 }
             }
-        else  {
+        else if(temp==3)  {
+            sc.nextLine();
                 System.out.print("Nhap ma TL can tim: ");String tmpTL= sc.nextLine();
                 System.out.println("\n KET QUA TIM KIEM: ");
                 for (Sach tmp : sach) {
                     if (tmp.getMaTL().equals(tmpTL)) {
                         tmp.output();
-
+                        continue opp;
                     }
-                    for (TapChi tmpe : tapchi) {
-                        if (tmpe.getMaTL().equals(tmpTL)) {
+                }
+                for (TapChi tmpe : tapchi) {
+                    if (tmpe.getMaTL().equals(tmpTL)) {
                             tmpe.output();
-                            break;
+                            continue opp;
                         }
                     }
                     for (Bao tmep : bao) {
                         if (tmep.getMaTL().equals(tmpTL)) {
                             tmep.output();
-                            break;
+                            continue opp;
                         }
                     }
                     System.out.println("Khong tim thay tai lieu");
                 }
         }
-            System.out.println("=======CHON CHUC NANG=======");
-            System.out.println("1.Nhap danh sach");
-            System.out.println("2.Tim Kiem");
-            System.out.println("3.Xuat danh sach");
-            System.out.println("4.Thoat");
-            temp=sc.nextInt();
         }
 
     }
-}

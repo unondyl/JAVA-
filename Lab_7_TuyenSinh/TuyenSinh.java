@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 
-public class TuyenSinh {
+public class TuyenSinh extends qlyTuyenSinh{
     Scanner sc = new Scanner(System.in);
     private int choose(int n)
     {
@@ -14,92 +14,43 @@ public class TuyenSinh {
         System.out.println("2. Xuat Thong Tin");
         System.out.println("3. Tim Kiem");
         System.out.println("4. Return ");
-        n=sc.nextInt();
+        n=sc.nextInt();sc.nextLine();
         return n;
     }
     public static void main(String[] args) {
-        ArrayList<KhoiA> arrKhoiA= new  ArrayList<KhoiA>();
-        ArrayList<KhoiB> arrKhoiB= new  ArrayList<KhoiB>();
-        ArrayList<KhoiC> arrKhoiC= new  ArrayList<KhoiC>();
-        qlyTuyenSinh objTS = new qlyTuyenSinh();
-        int nChoose=0;Scanner sc = new Scanner(System.in);
-        TuyenSinh obj = new TuyenSinh();
-        opp:
-        while(nChoose!=4)
-        {
-            nChoose=obj.choose(nChoose);
-            if (nChoose==1)
-            {
-                System.out.print("So thi Sinh khoi A: ");
-                int nTmp=sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        ArrayList<qlyTuyenSinh> TyS = new ArrayList<qlyTuyenSinh>();
+        qlyTuyenSinh ts=new qlyTuyenSinh();
+        TuyenSinh t=new TuyenSinh();
+        int n=0;;
+        while(n!=4){
+            n=t.choose(n);
+            if(n==1){
 
-                for(int i=0;i<nTmp;i++)
+                System.out.print("Loai Thi Sinh: "); String st = sc.nextLine();
+                if(st.equals("A") || st.equals("a")) ts = new KhoiA();
+                if(st.equals("B") || st.equals("b")) ts = new KhoiB();
+                if(st.equals("C") || st.equals("c")) ts = new KhoiC();
+                ts.input_Student();
+                TyS.add(ts);
+            }
+            else if (n==2){
+                for(qlyTuyenSinh tmpArr : TyS)
                 {
-                    System.out.println("Thi Sinh thu "+(i+1));
-                    KhoiA objKhoiA= new KhoiA();
-                    objKhoiA.input_Student(); //System.out.println(objKhoiA.getId());
-                    arrKhoiA.add(objKhoiA); //System.out.println(arrKhoiA.size());
-                }
-                System.out.print("So thi Sinh khoi B: ");
-                nTmp=sc.nextInt();
-                for(int i=0;i<nTmp;i++)
-                {
-                    System.out.println("Thi Sinh thu "+(i+1));
-                    KhoiB objKhoiB= new KhoiB();
-                    objKhoiB.input_Student();
-                    arrKhoiB.add(objKhoiB);
-                }
-                System.out.print("So thi Sinh khoi C: ");
-                nTmp=sc.nextInt();
-                for(int i=0;i<nTmp;i++)
-                {
-                    System.out.println("Thi Sinh thu "+(i+1));
-                    KhoiC objKhoiC= new KhoiC();
-                    objKhoiC.input_Student();
-                    arrKhoiC.add(objKhoiC);
+                    tmpArr.output_Student();
                 }
             }
-            else if (nChoose==2)
-            {
-                System.out.println("\n\n");
-                for (KhoiA tmpKhoiA : arrKhoiA){
-                    tmpKhoiA.output_Student();
-                }
-                System.out.println("=========================");
-                for (KhoiB tmpKhoiB : arrKhoiB){
-                    tmpKhoiB.output_Student();
-                }
-                System.out.println("=========================");
-                for (KhoiC tmpKhoiC : arrKhoiC){
-                    tmpKhoiC.output_Student();
-                }
-            }
-            else if(nChoose==3)
-            {
-                sc.nextLine();
-                System.out.print("Nhap SBD can tim: "); String Find_id=sc.nextLine();
-                for (KhoiA tmpKhoiA : arrKhoiA){
-                    if(tmpKhoiA.getId().equals(Find_id)){
-                        tmpKhoiA.output_Student();
-                        continue opp;
+            else if (n==3){
+                System.out.print("Nhap SBD thi sinh :"); String isID = sc.nextLine();
+                for(qlyTuyenSinh tmpArr : TyS)
+                    if (tmpArr.getId().equals(isID))
+                    {
+                        ts.output_Student();
                     }
+                else System.out.println("!! Khong tim thay ket qua !!");
                 }
-                //System.out.println("=========================");
-                for (KhoiB tmpKhoiB : arrKhoiB){
-                    if(tmpKhoiB.getId().equals(Find_id)){
-                        tmpKhoiB.output_Student();
-                        continue opp;
-                    }
-                }
-                //System.out.println("=========================");
-                for (KhoiC tmpKhoiC : arrKhoiC){
-                    if(tmpKhoiC.getId().equals(Find_id)){
-                        tmpKhoiC.output_Student();
-                        continue opp;
-                    }
-                }
-                System.out.println("Unvar");
-                }
-            }
+            else if (n==4){}
         }
+        System.out.println("\n \n!!!!   CHUONG TRINH DA KET THUC  !!!!");
+    }
 }

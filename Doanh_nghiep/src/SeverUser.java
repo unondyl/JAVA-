@@ -9,21 +9,36 @@
 // *** *****************
 //*******************
 
-public class SeverUser
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SeverUser extends CanBo
 {
     public static void main(String[] args)
     {
-        CongNhan cn = new CongNhan("Nguyễn Văn A", "1985", "Nam", "Hà Nội", "3/7");
-        KySu ks = new KySu("Trần Thị B", "1990", "Nữ", "Đà Nẵng", "Công nghệ thông tin");
-        NhanVien nv = new NhanVien("Lê Văn C", "1995", "Nam", "HCM", "Kế toán");
+        Scanner sc=new Scanner(System.in);
+        ArrayList<CanBo> list=new ArrayList<CanBo>();
+        int nTmp=sc.nextInt();
+        while (nTmp!=4)
+        {
+            if(nTmp==1)
+            {
+                CanBo b= new CongNhan("Jonh","dsa","123","123123","sdf");
+                list.add(b);
+                b=new NhanVien("Jack","boy","123","123123","sdf");
+                list.add(b);
+                b= new CongNhan("Nghiia","23134","32cs","36","a");
+                list.add(b);
+            }
+            if (nTmp==2)
+            {
+                for (CanBo c : list)
+                    {
+                        c.OutPrint();
+                    }
+            }
 
-        System.out.println("=== Thông tin công nhân ===");
-        cn.OutPrint();
-
-        System.out.println("\n=== Thông tin kỹ sư ===");
-        ks.OutPrint();
-
-        System.out.println("\n=== Thông tin nhân viên ===");
-        nv.OutPrint();
+            nTmp= sc.nextInt();
+        }
     }
 }

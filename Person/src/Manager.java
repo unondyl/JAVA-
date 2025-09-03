@@ -6,8 +6,8 @@ public class Manager extends Employee {
     public void setLevel(int level){
         this.level = level;
     }
-    public void outPut() {
-        super.outPut();
+    public void getDetail() {
+        super.getDetail();
         //System.out.println("Manager level: " + this.level);
     }
     public static  void main(String[] args)
@@ -20,6 +20,7 @@ public class Manager extends Employee {
         e.setSalary(3.0);
         e.setDepartment("Engineering");
         m.setLevel(2);
-        m.outPut();
+        //m.outPut();
+        p.getDetail();
     }
 }

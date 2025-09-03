@@ -11,8 +11,9 @@ public class Employee extends Person{
         this.department = department;
         System.out.println(this.department);
     }
-    public void outPut() {
-        //super.outPut();
+    @Override
+    public void getDetail() {
+        super.getDetail();
         System.out.println("Employee salary: " + this.salary);
         System.out.println("Employee department: " + this.department);
     }

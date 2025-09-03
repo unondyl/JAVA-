@@ -9,7 +9,7 @@ public class Person {
     public void setBirthday(String birthday){
         this.birthday = birthday;
     }
-    public void outPut() {
+    public void getDetail() {
         System.out.println("Name: " + name);
         System.out.println("Birthday: " + birthday);
     }

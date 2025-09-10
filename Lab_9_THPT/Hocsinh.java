@@ -8,13 +8,7 @@ public class Hocsinh extends ngQly{
     protected int namSinh;
     protected String queQuan;
 
-    public Nguoi() {
-    }
-
-    public Nguoi(String hoTen, int namSinh, String queQuan) {
-        this.hoTen = hoTen;
-        this.namSinh = namSinh;
-        this.queQuan = queQuan;
+    public Hocsinh() {
     }
 
     public void nhapThongTin() {
@@ -32,6 +26,9 @@ public class Hocsinh extends ngQly{
         System.out.println("Họ và tên: " + hoTen);
         System.out.println("Năm sinh: " + namSinh);
         System.out.println("Quê quán: " + queQuan);
+    }
+    public String getQueQuan() {
+        return queQuan;
     }
 }
 

@@ -27,7 +27,7 @@ public class ngQly{
         System.out.println("Lop hoc: "+Lop+"\nKhoa: "+Khoahoc+"\nKy: "+kyhoc+"\n ///Danh Sach///");
         for (Hocsinh tmpHS : arrHS)
         {
-            tmpHS.show();
+            tmpHS.hienThiThongTin();
         }
     }
     public void HSshow(Hocsinh tmpHS)
@@ -58,7 +58,7 @@ public class ngQly{
                 System.out.println("Nhap dia chi can tim: ");String isAddress =sc.nextLine();
                 for(ngQly tmpHS : ArrHS){
                     for (Hocsinh tmpG : tmpHS.arrHS){
-                        if (tmpG.getAddress().equals("isAddress")){
+                        if (tmpG.getQueQuan().equals("isAddress")){
                             tmpHS.HSshow(tmpG);
                         }
                     }

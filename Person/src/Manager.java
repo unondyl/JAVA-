@@ -12,15 +12,10 @@ public class Manager extends Employee {
     }
     public static  void main(String[] args)
     {
-        Person p = new Person();
-        Manager m = new Manager();
-        p.setName("Jeremy");
-        p.setBirthday("1994-04-02");
-        Employee e = new Employee();
-        e.setSalary(3.0);
-        e.setDepartment("Engineering");
-        m.setLevel(2);
-        //m.outPut();
-        p.getDetail();
+        Employee emp = new Employee();
+        Employee ee=(Employee)emp;
+        ee.setName("Johf");
+        ee.setSalary(845474);
+        ee.getDetail();
     }
 }

@@ -7,5 +7,5 @@ public interface Animal {
     public void introduce();
     public ArrayList<Animal> giveBirth(int n);
     public String getName();
-    public void die();
+    public void die(){};
 }

@@ -22,7 +22,8 @@ public class TuyenSinh extends qlyTuyenSinh{
         ArrayList<qlyTuyenSinh> TyS = new ArrayList<qlyTuyenSinh>();
         qlyTuyenSinh ts=new qlyTuyenSinh();
         TuyenSinh t=new TuyenSinh();
-        int n=0;;
+        int n=0;
+        opp:
         while(n!=4){
             n=t.choose(n);
             if(n==1){
@@ -35,10 +36,13 @@ public class TuyenSinh extends qlyTuyenSinh{
                 TyS.add(ts);
             }
             else if (n==2){
+                System.out.println("\n\n========================DANH SACH=========================");
                 for(qlyTuyenSinh tmpArr : TyS)
                 {
                     tmpArr.output_Student();
+                    System.out.println("__________________________________________________________");
                 }
+                System.out.println("==========================================================\n\n");
             }
             else if (n==3){
                 System.out.print("Nhap SBD thi sinh :"); String isID = sc.nextLine();
@@ -46,8 +50,9 @@ public class TuyenSinh extends qlyTuyenSinh{
                     if (tmpArr.getId().equals(isID))
                     {
                         ts.output_Student();
+                        continue opp;
                     }
-                else System.out.println("!! Khong tim thay ket qua !!");
+                System.out.println("!! Khong tim thay ket qua !!");
                 }
             else if (n==4){}
         }

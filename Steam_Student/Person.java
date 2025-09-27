@@ -1,13 +1,18 @@
 package Steam_Student;
 
-import javax.xml.crypto.Data;
-import java.awt.image.SampleModel;
+import javax.swing.*;
 import java.io.*;
-import java.util.Scanner;
 
-public class Person {
+public class Person extends JFrame {
     private String name,birth,address,sex;
-    public Person(){};
+    public Person(BufferedWriter dos){};
+    public Person(String name, String birth,String address, String sex)
+    {
+        this.name=name;
+        this.birth=birth;
+        this.address=address;
+        this.sex=sex;
+    }
     public void inp() throws IOException {
         BufferedReader bur = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Name: ");
@@ -18,8 +23,28 @@ public class Person {
 
 
     }
-    public void out(DataOutputStream dos,int inter) throws IOException {
-        dos.writeUTF(inter+"\t|"+name+"\t|");
+
+    //Get
+    public void out(ObjectOutputStream dos) throws IOException {
+
+        dos.writeObject(name+" \t|"+birth+" \t|"+address+" \t|"+sex+" \t|");
+    }
+    public void out2(){
+
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSex() {
+        return sex;
+    }
 }

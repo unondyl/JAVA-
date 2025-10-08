@@ -29,6 +29,10 @@ public class Person extends JFrame {
 
         dos.writeObject(name+" \t|"+birth+" \t|"+address+" \t|"+sex+" \t|");
     }
+    public void out(BufferedWriter dos) throws IOException {
+
+        dos.write(name+" \t|"+birth+" \t|"+address+" \t|"+sex+" \t|");
+    }
     public void out2(){
 
     }

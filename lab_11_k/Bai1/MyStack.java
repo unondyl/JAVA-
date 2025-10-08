@@ -9,7 +9,7 @@ public class MyStack {
         this.limit=size;
     }
     public boolean empty(){
-        return !data.isEmpty();
+        return data.isEmpty();
     }
     public boolean full(){
         return (data.size()==limit);

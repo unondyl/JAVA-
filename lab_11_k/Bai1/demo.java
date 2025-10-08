@@ -19,11 +19,11 @@ public class demo {
         System.out.println("GET ");
         n= sc.nextInt();;
         for(;n>0;n--){
-            if (stack.empty()){
-                throw new Exception("Stack Empty ");
-            }
-            else {
-                System.out.println(stack.get(n));
+            try {
+                stack.empty();
+            } catch (Exception e)
+            {
+                e.getMessage();
             }
         }
     }

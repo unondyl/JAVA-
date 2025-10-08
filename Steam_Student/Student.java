@@ -20,10 +20,15 @@ public class Student extends Person{
         System.out.print("GPA: ");GPA=bur.readLine();
     }
 
-    @Override
+
     public void out(ObjectOutputStream dos) throws IOException {
         super.out(dos);
         dos.writeObject(id+" \t|"+email+" \t|"+GPA+"\n");
+    }
+
+    public void out(BufferedWriter dos) throws IOException {
+        super.out(dos);
+        dos.write(id+" \t|"+email+" \t|"+GPA+"\n");
     }
 
     @Override
